@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+input {
+  border: none;
+  outline: none;
+
+  height: 2.2rem;
+}
+input:focus {
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: "Questrial", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ebebeb;
+}
+
+/* ************************************* to-do container 
+******************************************/
+.todo-container {
+  min-height: 25rem;
+  background-color: #004e98;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 4rem auto;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 20px rgba(2, 46, 87, 0.5);
+}
+
+/* ***********************************
+ date section
+ ************************************* */
+.date {
+  color: #fff;
+  padding: 3em 0;
+
+  text-align: center;
+}
+
+.date h1 {
+  font-size: 3rem;
+}
+
+/* *************************** 
+task-container 
+************************************/
+.task-container {
+  background-color: #fff;
+  width: 23rem;
+  min-height: 18rem;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-radius: 0.8rem 0.8rem;
+  box-shadow: 0 0 6em rgba(204, 204, 204, 0.195);
+  z-index: 5;
+}
+
+/* ****************************
+ task - list
+ ******************************* */
+.task-list {
+  margin-top: 1.5rem;
+}
+.task-list ol li {
+  line-height: 2;
+}
+
+/* ************************
+new item
+************************** */
+
+.new-item .btn {
+  background-color: #ff6600c4;
+  padding: 6px 9px;
+  border-radius: 50%;
+  margin-left: 0.8rem;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-item input[type="text"] {
+  width: 14rem;
+  border-bottom: 2px solid hsl(225, 5%, 55%);
+}
+
+.new-item input[type="text"]:focus {
+  background-color: #8abef78a;
+  border: none;
+  padding: 0.5em;
+  border-radius: 8px;
+}
+
+.new-item img {
+  width: 0.9rem;
+}
+
+/* ***********************************
+item
+************************************ */
+.item {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+}
+
+.item input[type="checkbox"] {
+  margin-right: 2rem;
+  border-radius: 50%;
+  outline-style: none;
+}
+
+/* checked item/checkbox */
+input:checked + p {
+  text-decoration: line-through;
+  text-decoration-color: #3535358a;
+  text-decoration-thickness: 2px;
+}
