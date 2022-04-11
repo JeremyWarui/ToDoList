@@ -96,11 +96,13 @@ new item
   margin-left: 0.8rem;
 }
 
-.btn {
+#addItem {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
+
 .new-item input[type="text"] {
   width: 14rem;
   /* border-bottom: 2px solid hsl(225, 5%, 55%); */
