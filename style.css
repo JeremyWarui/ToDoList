@@ -29,7 +29,8 @@ body {
   background-color: #ebebeb;
 }
 
-/* ************************************* to-do container 
+/* ************************************* 
+to-do container 
 ******************************************/
 .todo-container {
   min-height: 25rem;
@@ -102,18 +103,34 @@ new item
 }
 .new-item input[type="text"] {
   width: 14rem;
-  border-bottom: 2px solid hsl(225, 5%, 55%);
+  /* border-bottom: 2px solid hsl(225, 5%, 55%); */
+  font-family: "Questrial", sans-serif;
+  font-size: 1rem;
+  background-color: rgba(138, 190, 247, 0.541);
+  /* background-color: #ebebeb; */
+  border-radius: 8px 8px;
+  padding: 0 5px 0px 5px;
 }
 
 .new-item input[type="text"]:focus {
-  background-color: #8abef78a;
   border: none;
   padding: 0.5em;
   border-radius: 8px;
 }
 
+.new-item input[type="text"]:active,
+.new-item input[type="text"]:focus {
+  background-color: rgba(138, 190, 247, 0.541);
+}
+
 .new-item img {
   width: 0.9rem;
+}
+
+::placeholder {
+  font-family: "Questrial", sans-serif;
+  font-size: 1rem;
+  text-align: left;
 }
 
 /* ***********************************
@@ -127,13 +144,9 @@ item
 
 .item input[type="checkbox"] {
   margin-right: 2rem;
-  border-radius: 50%;
-  outline-style: none;
 }
 
 /* checked item/checkbox */
 input:checked + p {
-  text-decoration: line-through;
-  text-decoration-color: #3535358a;
-  text-decoration-thickness: 2px;
+  text-decoration: line-through #004e98 2px;
 }
