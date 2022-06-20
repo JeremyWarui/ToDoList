@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <title>To Do App</title>
+
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://kit.fontawesome.com/51683867e6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script src="index.js"></script>
+  <div class="container">
+    <div class="todo-container">
+      <div class="date" id="newDate">
+        <h1 id="day"></h1>
+        <p id="date"></p>
+      </div>
+
+      <div class="task-container">
+
+        <form action="/send" method="POST">
+          <input type="text" name="newItem" id="newItem" placeholder="add a new item here" />
+
+          <button class="btn" id="addItem" type="submit">submit
+            <img src="./plus-solid.svg" alt="add icon" />
+          </button>
+
+          <div class="item">
+            <input type="checkbox" name="" id="" />
+            <p>Visit the park</p>
+          </div>
+
+          <div id="feed"></div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    const now = new Date()
+
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    var day = days[now.getDay()];
+    var month = months[now.getMonth()];
+    var year = now.getFullYear();
+    var today = now.getDate()
+
+    const withSlashes = [today, month, year].join('/');
+    document.getElementById("day").innerHTML = day;
+    document.getElementById("date").innerHTML = withSlashes;
+
+
+    const feedData = document.getElementById("feed");
+
+    getData()
+    async function getData() {
+      const url = '/getAll';
+      const response = await fetch(url);
+      const json = await response.json();
+      json.forEach(element => {
+        const notes = `<div class="item"><input type = "checkbox"><p>` + element.notes + `</p></div>`
+        feedData.insertAdjacentHTML("beforeend", notes)
+      });
+
+    }
+  </script>
+
+</body>
+
+</html>
